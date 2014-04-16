@@ -1,0 +1,107 @@
+Introduction to Go
+
+Brian G. Merrell
+Fungineer, Rakuten MediaForge
+bgmerrell (Twitter, Gmail, GitHub, etc)
+
+* Goal of this talk
+
+Understand Go well enough to reason about when and where to use it
+
+.image intro-to-go/img/gopher.png
+
+* History
+
+Appeared in 2009 (with 1.0 being released March 2012)
+
+Ken Thompson (Unix, B), Rob Pike (Plan 9), Robert Griesemer (Java HotSpot VM)
+
+Build a language that is efficient, safe, and easy to use
+
+Not to do research into programming language design
+
+* Justification -- Why another language?
+
+C++ is too complex
+
+Compilation is too slow
+
+"Programming had become too difficult"
+
+Many programmers were choosing ease over safety and efficiency
+
+The computing landscape and scale has changed
+
+* Adoption
+
+Several Go programs in production inside Google
+
+Being used for distributed systems and concurrency University courses (MIT, Carnegie Mellon)
+
+GopherCon 2014
+
+Go is rapidly closing in on 1% of total commits and half a percent of projects and contributors (compared to the most popular programming languages at ~10% and ~5% respectively).
+
+Adoption by other companies...
+
+* Companies hiring Go developers:
+
+- Canonical (Juju orchestration tool)
+- Adobe (Site reliability in Seattle)
+- Hewlett-Packard (SE in Colorado)
+- SoundCloud
+- Docker
+- Thomson Reuters
+
+In Utah
+
+- Rakuten MediaForge
+- SpaceMonkey
+- Steal Network
+
+* Praise & Predictions
+
+.image intro-to-go/img/twitter1.png 153 779
+.image intro-to-go/img/twitter2.png 153 779
+.image intro-to-go/img/twitter3.png 153 779
+
+* Go is...
+
+Compiled
+
+Strongly typed
+
+Statically typed (with type inference)
+
+Garbage collected
+
+Similar to C in its syntax
+
+Statically verified duck typing (via interfaces)
+
+Open Source
+
+* Go does not have...
+
+Classes
+
+Exceptions
+
+Assertions
+
+Templates / generics (for now)
+
+Operator overloading
+
+* Hello World
+
+.code intro-to-go/hello-world.go
+
+* Variable declarations
+
+.code intro-to-go/variable-declarations.go
+
+* Functions
+
+.code intro-to-go/functions.go
+
