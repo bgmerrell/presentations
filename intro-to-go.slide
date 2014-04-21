@@ -65,6 +65,12 @@ In Utah
 .image intro-to-go/img/twitter2.png 153 779
 .image intro-to-go/img/twitter3.png 153 779
 
+* Learning a new language
+
+"Go is a new language. Although it borrows ideas from existing languages, it has unusual properties that make effective Go programs different in character from programs written in its relatives. A straightforward translation of a C++ or Java program into Go is unlikely to produce a satisfactory result—Java programs are written in Java, not Go. On the other hand, thinking about the problem from a Go perspective could produce a successful but quite different program. In other words, to write Go well, it's important to understand its properties and idioms. It's also important to know the established conventions for programming in Go, such as naming, formatting, program construction, and so on, so that programs you write will be easy for other Go programmers to understand."
+
+Effective Go ([[http://golang.org/doc/effective_go.html]])
+
 * Go is...
 
 Compiled
@@ -99,9 +105,86 @@ Operator overloading
 
 * Variable declarations
 
-.code intro-to-go/variable-declarations.go
+.play intro-to-go/variable-declarations.go
 
 * Functions
 
 .code intro-to-go/functions.go
 
+* Functions returning multiple values
+
+.play intro-to-go/multiple-return-vals.go
+
+* Basic types
+
+.code intro-to-go/basic-types.txt
+
+* Type conversions
+
+No implicit conversions
+
+.play intro-to-go/type-conversions.go
+
+* Looping
+
+.play intro-to-go/looping0.go
+
+* Looping
+
+.play intro-to-go/looping1.go
+
+* Looping
+
+.play intro-to-go/looping2.go
+
+* If/else
+
+.play intro-to-go/if-else.go
+
+* Switch
+
+.play intro-to-go/switch.go
+
+* Switch with no condition
+
+.play intro-to-go/switch-no-condition.go
+
+* Structs (defining your own types)
+
+.play intro-to-go/structs.go
+
+* Don't fear Go pointers
+
+.play intro-to-go/pointers.go
+
+* Slices
+
+.play intro-to-go/slices.go
+
+* Range
+
+.play intro-to-go/range.go
+
+* Maps
+
+.play intro-to-go/maps.go
+
+* Function values and function literals
+
+.play intro-to-go/func-vals-and-func-literals.go
+
+* Functions vs. Methods
+
+.image intro-to-go/img/fry-func-or-method.jpg
+
+* Methods
+
+.play intro-to-go/methods.go
+
+* Methods on any type
+
+.play intro-to-go/methods-2.go
+
+* Println
+
+.code intro-to-go/fmt-println.go
