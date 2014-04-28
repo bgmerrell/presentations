@@ -218,6 +218,11 @@ If in doubt, use a pointer receiver (it will behave like a method in other moder
 
 .play intro-to-go/interfaces.go /START OMIT/,/END OMIT/
 
+
+* Empty interfaces and variadic functions
+
+.code intro-to-go/fmt-println.go
+
 * Errors
 
 .play intro-to-go/errors-simple.go /START OMIT/,/END OMIT/
@@ -230,6 +235,6 @@ If in doubt, use a pointer receiver (it will behave like a method in other moder
 
 .play intro-to-go/concurrency.go /START OMIT/,/END OMIT/
 
-* Println
+* Concurrency
 
-.code intro-to-go/fmt-println.go
+.play intro-to-go/concurrency-for-with-select.go

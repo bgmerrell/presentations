@@ -18,7 +18,7 @@ func main() {
 	rand.Seed(5)
 	c1 := make(chan int)
 	c2 := make(chan int)
-	go waitAndPrint("gun", c1)
-	go waitAndPrint("shot", c2)
+	go waitAndPrint("over", c1)
+	go waitAndPrint("hang", c2)
 }
 // END OMIT
