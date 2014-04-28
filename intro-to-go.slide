@@ -44,13 +44,26 @@ Go is rapidly closing in on 1% of total commits and half a percent of projects a
 
 Adoption by other companies...
 
-* Companies hiring Go developers:
+* Companies at Gophercon using Go
 
 - Canonical (Juju orchestration tool)
+- PayPal (Beacon)
+- Puppet Labs
+- Mozilla (Heka)
+- SoundCloud
+- The Hybrid Group (Gobot.io)
+- stackoverflow
+- Apcera
+- Poptip
+- MongoDB
+- Google
+
+And others.  Most are hiring Go programmers.
+
+* Other companies hiring Go programmers:
+
 - Adobe (Site reliability in Seattle)
 - Hewlett-Packard (SE in Colorado)
-- SoundCloud
-- Docker
 - Thomson Reuters
 
 In Utah
@@ -181,9 +194,41 @@ No implicit conversions
 
 .play intro-to-go/methods.go
 
+* Methods continued
+
+.play intro-to-go/methods-pointers.go
+
+* Pointer Receivers vs. Value Receivers
+
+If in doubt, use a pointer receiver (it will behave like a method in other modern languages)
+
+*Specifics*
+
+- A pointer receiver should be used to persist object modifications
+
+- A pointer receiver should be used for large objects
+
+- A value receiver can be used for small objects (but the thing about persistence still applies)
+
 * Methods on any type
 
-.play intro-to-go/methods-2.go
+.play intro-to-go/methods-on-any-type.go
+
+* Interfaces
+
+.play intro-to-go/interfaces.go /START OMIT/,/END OMIT/
+
+* Errors
+
+.play intro-to-go/errors-simple.go /START OMIT/,/END OMIT/
+
+* Errors continued
+
+.play intro-to-go/errors.go /START OMIT/,/END OMIT/
+
+* Concurrency
+
+.play intro-to-go/concurrency.go /START OMIT/,/END OMIT/
 
 * Println
 
