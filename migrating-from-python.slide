@@ -1,0 +1,65 @@
+Migrating to Go from Python
+
+Brian G. Merrell
+Fungineer, Rakuten MediaForge
+bgmerrell (Twitter, Gmail, GitHub, etc)
+
+* Goal of this talk
+
+Understand trade-offs between Go and Python development
+
+.image migrating-from-python/img/gopher.png
+
+* Justification -- Why another language?
+
+C++ is too complex
+
+Compilation is too slow
+
+"Programming had become too difficult"
+
+Many programmers were choosing ease over safety and efficiency
+
+The computing landscape and scale has changed
+
+* Gophercon 2014
+
+TODO: Add notes about Python mentions at Gophercon
+
+* Learning a new language
+
+"Go is a new language. Although it borrows ideas from existing languages, it has unusual properties that make effective Go programs different in character from programs written in its relatives. A straightforward translation of a C++ or Java program into Go is unlikely to produce a satisfactory result—Java programs are written in Java, not Go. On the other hand, thinking about the problem from a Go perspective could produce a successful but quite different program. In other words, to write Go well, it's important to understand its properties and idioms. It's also important to know the established conventions for programming in Go, such as naming, formatting, program construction, and so on, so that programs you write will be easy for other Go programmers to understand."
+
+Effective Go ([[http://golang.org/doc/effective_go.html]])
+
+* Go is...
+
+Compiled
+
+Strongly typed
+
+Statically typed (with type inference)
+
+Garbage collected
+
+Similar to C in its syntax
+
+Statically verified duck typing (via interfaces)
+
+Open Source
+
+* Go does not have...
+
+Classes
+
+Exceptions
+
+Assertions
+
+Templates / generics (for now)
+
+Operator overloading
+
+* Errors
+
+.play migrating-from-python/error-handling.go
