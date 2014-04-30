@@ -52,11 +52,11 @@ Adoption by other companies...
 - Mozilla (Heka)
 - SoundCloud
 - The Hybrid Group (Gobot.io)
+- GitHub (traffic graphs)
 - stackoverflow
 - Apcera
-- Poptip
 - MongoDB
-- Google
+- Poptip
 
 And others.  Most are hiring Go programmers.
 
@@ -65,6 +65,8 @@ And others.  Most are hiring Go programmers.
 - Adobe (Site reliability in Seattle)
 - Hewlett-Packard (SE in Colorado)
 - Thomson Reuters
+- Intel
+- Breitbart (?)
 
 In Utah
 
@@ -86,7 +88,7 @@ Effective Go ([[http://golang.org/doc/effective_go.html]])
 
 * Go is...
 
-Compiled
+Compiled (to machine code)
 
 Strongly typed
 
@@ -96,7 +98,7 @@ Garbage collected
 
 Similar to C in its syntax
 
-Statically verified duck typing (via interfaces)
+Capable of statically verified duck typing (via interfaces)
 
 Open Source
 
@@ -111,6 +113,8 @@ Assertions
 Templates / generics (for now)
 
 Operator overloading
+
+Macros
 
 * Hello World
 
@@ -142,11 +146,11 @@ No implicit conversions
 
 .play intro-to-go/looping0.go
 
-* Looping
+* More looping
 
 .play intro-to-go/looping1.go
 
-* Looping
+* Even more looping
 
 .play intro-to-go/looping2.go
 
@@ -168,7 +172,7 @@ No implicit conversions
 
 * Don't fear Go pointers
 
-.play intro-to-go/pointers.go
+.play intro-to-go/pointers.go /START OMIT/,/END OMIT/
 
 * Slices
 
@@ -235,6 +239,10 @@ If in doubt, use a pointer receiver (it will behave like a method in other moder
 
 .play intro-to-go/concurrency.go /START OMIT/,/END OMIT/
 
-* Concurrency
+* Concurrency continued
 
 .play intro-to-go/concurrency-for-with-select.go
+
+* Utah Gophers
+
+.image intro-to-go/img/honey-gopher.jpg

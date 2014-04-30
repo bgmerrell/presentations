@@ -2,6 +2,7 @@ package main
 
 import "fmt"
 
+// START OMIT
 type Coordinate struct {
     X int
     Y int
@@ -15,7 +16,13 @@ func getCoordPtr() *Coordinate {
 
 func main() {
 	var cp *Coordinate = getCoordPtr()
-	fmt.Println(*cp)
 	fmt.Println(cp)
+	fmt.Printf("%T\n", cp)
+	fmt.Println(*cp)
+	fmt.Printf("%T\n", *cp)
 	fmt.Println(&cp)
+	fmt.Printf("%T\n", &cp)
+	fmt.Println((*cp).X) // Don't use
+	fmt.Println(cp.X) // Use this instead
 }
+// END OMIT
