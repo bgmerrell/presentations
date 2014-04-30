@@ -32,21 +32,9 @@ TODO: Add notes about Python mentions at Gophercon
 
 Effective Go ([[http://golang.org/doc/effective_go.html]])
 
-* Go is...
+* The High-Level View
 
-Compiled
-
-Strongly typed
-
-Statically typed (with type inference)
-
-Garbage collected
-
-Similar to C in its syntax
-
-Statically verified duck typing (via interfaces)
-
-Open Source
+.image migrating-from-python/img/python-vs-go-table.png
 
 * Go does not have...
 
@@ -62,4 +50,4 @@ Operator overloading
 
 * Errors
 
-.play migrating-from-python/error-handling.go
+.play migrating-from-python/error-handling.go /START OMIT/,/END OMIT/
