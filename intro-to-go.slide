@@ -4,6 +4,10 @@ Brian G. Merrell
 Fungineer, Rakuten MediaForge
 bgmerrell (Twitter, Gmail, GitHub, etc)
 
+*  
+
+.image intro-to-go/img/goofy-gophers.png
+
 * Goal of this talk
 
 Understand Go well enough to reason about when and where to use it
@@ -12,13 +16,13 @@ Understand Go well enough to reason about when and where to use it
 
 * History
 
-Appeared in 2009 (with 1.0 being released March 2012)
+- Appeared in 2009 (with 1.0 being released March 2012)
 
-Ken Thompson (Unix, B), Rob Pike (Plan 9), Robert Griesemer (Java HotSpot VM)
+- Ken Thompson (Unix, B), Rob Pike (Plan 9), Robert Griesemer (Java HotSpot VM)
 
-Build a language that is efficient, safe, and easy to use
+- Wanted to build a language that is efficient, safe, and easy to use
 
-Not to do research into programming language design
+- Doing research into programming language design was not the purpose
 
 * Justification -- Why another language?
 

@@ -3,17 +3,17 @@ package main
 import "fmt"
 
 func main() {
-    a := make([]int, 5)
-    printSlice("a", a)
-    b := make([]int, 0, 5)
-    printSlice("b", b)
-    c := b[:2]
-    printSlice("c", c)
-    d := c[2:5]
-    printSlice("d", d)
-}
+    m := make(map[string]int)
 
-func printSlice(s string, x []int) {
-    fmt.Printf("%s len=%d cap=%d %v\n",
-        s, len(x), cap(x), x)
+    m["Answer"] = 42
+    fmt.Println("The value:", m["Answer"])
+
+    m["Answer"] = 48
+    fmt.Println("The value:", m["Answer"])
+
+    delete(m, "Answer")
+    fmt.Println("The value:", m["Answer"])
+
+    v, ok := m["Answer"]
+    fmt.Println("The value:", v, "Present?", ok)
 }

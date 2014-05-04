@@ -22,13 +22,41 @@ Many programmers were choosing ease over safety and efficiency
 
 The computing landscape and scale has changed
 
+*  
+
+.image migrating-from-python/img/compiling.png 550 550
+
+* What I like about Python
+
+- Easy-to-read syntax
+- Powerful standard library
+- Fun to write
+- Get a lot done very quickly
+
+* What I dislike about Python
+
+Scales poorly
+- Team size
+- Codebase size
+- Performance demands
+
+.image migrating-from-python/img/flying-with-python.png
+
+*  
+
+.image migrating-from-python/img/flying-with-go.jpg
+
+* Hello World
+
+.play migrating-from-python/hello-world-web.go
+
 * Gophercon 2014
 
 TODO: Add notes about Python mentions at Gophercon
 
 * Learning a new language
 
-"Go is a new language. Although it borrows ideas from existing languages, it has unusual properties that make effective Go programs different in character from programs written in its relatives. A straightforward translation of a C++ or Java program into Go is unlikely to produce a satisfactory result—Java programs are written in Java, not Go. On the other hand, thinking about the problem from a Go perspective could produce a successful but quite different program. In other words, to write Go well, it's important to understand its properties and idioms. It's also important to know the established conventions for programming in Go, such as naming, formatting, program construction, and so on, so that programs you write will be easy for other Go programmers to understand."
+"...A straightforward translation of a C++ or Java program into Go is unlikely to produce a satisfactory result—Java programs are written in Java, not Go. [...] To write Go well, it's important to understand its properties and idioms. It's also important to know the established conventions for programming in Go, such as naming, formatting, program construction, and so on, so that programs you write will be easy for other Go programmers to understand."
 
 Effective Go ([[http://golang.org/doc/effective_go.html]])
 
@@ -48,6 +76,112 @@ Templates / generics (for now)
 
 Operator overloading
 
+* Zen of Python
+
+.code migrating-from-python/zen.txt
+
+* Explicit is better than implicit
+
+.play migrating-from-python/set-and-get-attr.py /START OMIT/,/END OMIT/
+
+* Explicit is better than implicit
+
+.play migrating-from-python/set-and-get-attr.py
+
+* Simple is better than complex
+
+- No decorators
+- No static methods
+- No class methods
+- No properties
+- No iterators
+- No generators
+- No exceptions
+
+* Flat is better than nested
+
+.play migrating-from-python/nested.py
+
+* Flat is better than nested
+
+.play migrating-from-python/flat.go /START OMIT/,/END OMIT/
+
+* Sparse is better than dense
+
+- No list comprehensions
+.code migrating-from-python/one-liner-2.py
+.code migrating-from-python/one-liner-3.py
+- No ternary operator (expression?true:false)
+.code migrating-from-python/one-liner-1.py
+
+* Readability counts
+
+TODO
+
+* Errors should never pass silently (unless explicitly silenced)
+
+TODO
+
+* Zero values
+
+TODO
+
+* Constructors
+
+TODO
+
+* Instantiation
+
+TODO
+
+* Encapsulation
+
+Example: don't export struct but create a New function
+
+TODO
+
+* Duck typing
+
+.play migrating-from-python/duck.py
+
+* Structural typing
+
+.play migrating-from-python/interfaces.go /START OMIT/,/END OMIT/
+
 * Errors
 
 .play migrating-from-python/error-handling.go /START OMIT/,/END OMIT/
+
+* Virtual envs
+
+TODO 
+
+* Code organization
+
+TODO
+
+* Packages
+
+In Go, multiple files can belong to a package
+
+* pip
+
+go get
+
+* pep8
+
+gofmt
+
+TODO: example
+
+* Unit testing
+
+TODO
+
+* Code coverage
+
+TODO 
+
+* Some things I miss from Python
+
+- Comparing maps and sets with ==
