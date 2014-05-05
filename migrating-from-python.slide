@@ -10,11 +10,15 @@ Understand trade-offs between Go and Python development
 
 .image migrating-from-python/img/gopher.png
 
+* What I like about Python
+
+- Easy-to-read syntax
+- Powerful standard library
+- Fun to write
+- Get a lot done very quickly
+- Often fast enough (in terms of execution speed)
+
 * Justification -- Why another language?
-
-C++ is too complex
-
-Compilation is too slow
 
 "Programming had become too difficult"
 
@@ -22,29 +26,55 @@ Many programmers were choosing ease over safety and efficiency
 
 The computing landscape and scale has changed
 
+C++ is too complex
+
+Compilation is too slow
+
 *  
 
 .image migrating-from-python/img/compiling.png 550 550
 
-* What I like about Python
+* 
 
-- Easy-to-read syntax
-- Powerful standard library
-- Fun to write
-- Get a lot done very quickly
+.image migrating-from-python/img/flying-with-python.png
 
 * What I dislike about Python
 
-Scales poorly
-- Team size
-- Codebase size
-- Performance demands
+Runtime errors
+ 
+It doesn't scale as well as I would like...
 
-.image migrating-from-python/img/flying-with-python.png
+- with team size (many ways to do the same thing, pep8)
+- with codebase size (runtine errors, type hierarchies, magic)
+- with increasing performance demands (GIL, lack of concurrency primitives, interpreted)
 
 *  
 
 .image migrating-from-python/img/flying-with-go.jpg
+
+* What I like about Go
+
+- Small language
+- Compile time checks (fast!)
+- Fast enough for even more things
+- Benefits come at very little cost
+- Dynamic feel with compiled performance
+- Rich standard library
+- Libraries are all written in Go
+- Great bundled tooling
+- Seems to scale well (TBD)
+
+* Benchmarks
+
+.image migrating-from-python/img/go-python-benchmark.png 462 740
+
+* What I dislike about Go
+
+- Naked return statements
+.code migrating-from-python/img/naked-return.go
+- At case where I wish scoping rules were different
+- Not faster than Java... yet 
+- new, &T{}, make, range,
 
 * Hello World
 
@@ -116,11 +146,28 @@ Operator overloading
 
 * Readability counts
 
-TODO
+Python
+
+- Dense code
+- Magic
+- Lots of syntactic sugar
+
+Go
+
+- Small language
+- Very little syntactic sugar
+- Very explicit
+- No operator overloading
 
 * Errors should never pass silently (unless explicitly silenced)
 
-TODO
+.play migrating-from-python/errors.go
+
+* Errors
+
+What about Python's exception subtypes? (e.g., AttributeError, IOError, etc).
+
+.play migrating-from-python/error-handling.go /START OMIT/,/END OMIT/
 
 * Zero values
 
@@ -138,6 +185,8 @@ TODO
 
 Example: don't export struct but create a New function
 
+* Encapsulation
+
 TODO
 
 * Duck typing
@@ -148,31 +197,52 @@ TODO
 
 .play migrating-from-python/interfaces.go /START OMIT/,/END OMIT/
 
-* Errors
+* Calling C code from Go
 
-.play migrating-from-python/error-handling.go /START OMIT/,/END OMIT/
-
-* Virtual envs
-
-TODO 
+.code migrating-from-python/cgo.go
 
 * Code organization
 
-TODO
+.code migrating-from-python/code-organization.txt
+
+.code migrating-from-python/code-organization.go
+
+.code migrating-from-python/code-organization-2.txt
+
+* Code organization
+
+.code migrating-from-python/code-organization-3.txt
 
 * Packages
 
-In Go, multiple files can belong to a package
+- Multiple files can belong to a package
+- One package per directory
+- The path to that directory determines the package's import path
+- Build system locations dependencies from the source alone
 
-* pip
+* go get
 
-go get
+Similar to pip install...
 
-* pep8
+.code migrating-from-python/go-get.txt
 
-gofmt
+.code migrating-from-python/go-get-2.txt
 
-TODO: example
+* gofmt (instead of PEP 8)
+
+Before:
+
+.play migrating-from-python/before-gofmt.go
+
+After:
+
+.play migrating-from-python/after-gofmt.go
+
+* PEP 257
+
+.code migrating-from-python/doc-comment.go
+
+[[http://godoc.org/net/url#User]]
 
 * Unit testing
 
@@ -182,6 +252,6 @@ TODO
 
 TODO 
 
-* Some things I miss from Python
+* Things I miss from Python
 
-- Comparing maps and sets with ==
+- ?

@@ -1,0 +1,5 @@
+$ go get --help
+usage: get [-d] [-fix] [-t] [-u] [build flags] [packages]
+
+Get downloads and installs the packages named by the import paths,
+along with their dependencies.
