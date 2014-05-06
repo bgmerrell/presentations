@@ -74,7 +74,10 @@ It doesn't scale as well as I would like...
 .code migrating-from-python/img/naked-return.go
 - At case where I wish scoping rules were different
 - Not faster than Java... yet 
-- new, &T{}, make, range,
+- new vs. &T{} vs. make
+- len("foo") vs. "foo".Len() (but it keeps the language simpler)
+
+Definitely no deal breakers
 
 * Hello World
 
@@ -83,12 +86,6 @@ It doesn't scale as well as I would like...
 * Gophercon 2014
 
 TODO: Add notes about Python mentions at Gophercon
-
-* Learning a new language
-
-"...A straightforward translation of a C++ or Java program into Go is unlikely to produce a satisfactory result—Java programs are written in Java, not Go. [...] To write Go well, it's important to understand its properties and idioms. It's also important to know the established conventions for programming in Go, such as naming, formatting, program construction, and so on, so that programs you write will be easy for other Go programmers to understand."
-
-Effective Go ([[http://golang.org/doc/effective_go.html]])
 
 * The High-Level View
 
@@ -105,6 +102,13 @@ Assertions
 Templates / generics (for now)
 
 Operator overloading
+
+* Learning a new language
+
+"...A straightforward translation of a C++ or Java program into Go is unlikely to produce a satisfactory result—Java programs are written in Java, not Go. [...] To write Go well, it's important to understand its properties and idioms. It's also important to know the established conventions for programming in Go, such as naming, formatting, program construction, and so on, so that programs you write will be easy for other Go programmers to understand."
+
+Effective Go ([[http://golang.org/doc/effective_go.html]])
+
 
 * Zen of Python
 
@@ -171,23 +175,27 @@ What about Python's exception subtypes? (e.g., AttributeError, IOError, etc).
 
 * Zero values
 
-TODO
+.play migrating-from-python/zero-value.py
 
-* Constructors
+.play migrating-from-python/zero-value.go /START OMIT/,/END OMIT/
 
-TODO
+* Constructors & composite literals
 
-* Instantiation
+.play migrating-from-python/constructors.go /START OMIT/,/END OMIT/
 
-TODO
+Remember field values can be used during instantiation...
 
-* Encapsulation
-
-Example: don't export struct but create a New function
+.play migrating-from-python/constructors-2.go /START OMIT/,/END OMIT/
 
 * Encapsulation
 
-TODO
+Capitalized names are exported
+
+.code migrating-from-python/buffer-struct.go
+
+[[http://golang.org/pkg/bytes/#Buffer]]
+
+.play migrating-from-python/encapsulation.go /START OMIT/,/END OMIT/
 
 * Duck typing
 
@@ -246,12 +254,28 @@ After:
 
 * Unit testing
 
-TODO
+.code migrating-from-python/unit-testing.txt
+
+.code migrating-from-python/unit-testing-coverage.txt
 
 * Code coverage
 
-TODO 
+.code migrating-from-python/coverprofile.txt
+
+.code migrating-from-python/cover.txt
+
+.image migrating-from-python/img/coverage.png
+
+* Other tools
+
+- go build -race (race detection)
+- go vet (static analysis)
+- go test -bench
+- cpuprofile
+- memprofile
 
 * Things I miss from Python
 
-- ?
+- coding speed
+
+But...

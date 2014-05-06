@@ -1,0 +1,11 @@
+$ go test ./...
+?   	github.com/bgmerrell/geto	[no test files]
+ok  	github.com/bgmerrell/geto/lib/config	0.017s
+?   	github.com/bgmerrell/geto/lib/host	[no test files]
+?   	github.com/bgmerrell/geto/lib/remote	[no test files]
+ok  	github.com/bgmerrell/geto/lib/remote/dummy	0.013s
+?   	github.com/bgmerrell/geto/lib/remote/ssh	[no test files]
+?   	github.com/bgmerrell/geto/lib/ssh	[no test files]
+ok  	github.com/bgmerrell/geto/lib/task	0.028s
+?   	github.com/bgmerrell/geto/server	[no test files]
+?   	github.com/bgmerrell/geto/test/ssh	[no test files]
