@@ -50,19 +50,11 @@ Adoption by other companies...
 
 * Companies at Gophercon using Go
 
-- Canonical (Juju orchestration tool)
-- PayPal (Beacon)
-- Puppet Labs
-- Mozilla (Heka)
-- SoundCloud
-- The Hybrid Group (Gobot.io)
-- GitHub (traffic graphs)
-- stackoverflow
-- Apcera
-- MongoDB
-- Poptip
+.image intro-to-go/img/company-logos.jpg 623 977
 
-And others.  Most are hiring Go programmers.
+* Utah Companies using Go
+
+.image intro-to-go/img/utah-company-logos.jpg 623 977
 
 * Other companies hiring Go programmers:
 
@@ -247,6 +239,6 @@ If in doubt, use a pointer receiver (it will behave like a method in other moder
 
 .play intro-to-go/concurrency-for-with-select.go
 
-* Utah Gophers
+* 
 
-.image intro-to-go/img/honey-gopher.jpg
+.image intro-to-go/img/utah-gopher-announce.jpg 623 977

@@ -10,6 +10,10 @@ Understand trade-offs between Go and Python development
 
 .image migrating-from-python/img/gopher.png
 
+* Somewhat autobiographical
+
+Story time...
+
 * What I like about Python
 
 - Easy-to-read syntax
@@ -40,6 +44,8 @@ Compilation is too slow
 
 * What I dislike about Python
 
+Actual quite complex
+
 Runtime errors
  
 It doesn't scale as well as I would like...
@@ -54,7 +60,7 @@ It doesn't scale as well as I would like...
 
 * What I like about Go
 
-- Small language
+- Small language (it fits in your head; I've read the spec)
 - Compile time checks (fast!)
 - Fast enough for even more things
 - Benefits come at very little cost
@@ -63,6 +69,22 @@ It doesn't scale as well as I would like...
 - Libraries are all written in Go
 - Great bundled tooling
 - Seems to scale well (TBD)
+
+* Why people are using Go
+
+- Faster (Big data, web services)
+- Safer (Compile time checks, built-in concurrency primitives)
+- Productiver (Rich tools, compositional coding, less is more[1])
+
+All this comes at almost no cost vs. a dynamic language
+
+Rakuten MediaForge changed for the first reason
+
+[1] [[http://commandcenter.blogspot.com/2012/06/less-is-exponentially-more.html]]
+
+* Hello World
+
+.play migrating-from-python/hello-world-web.go
 
 * Benchmarks
 
@@ -76,16 +98,25 @@ It doesn't scale as well as I would like...
 - Not faster than Java... yet 
 - new vs. &T{} vs. make
 - len("foo") vs. "foo".Len() (but it keeps the language simpler)
+- The name "Go" is ungoogleable / hashtagable (use golang)
 
 Definitely no deal breakers
 
-* Hello World
+* Who is using Go?
 
-.play migrating-from-python/hello-world-web.go
+.image migrating-from-python/img/company-logos.jpg 623 977
+
+* Who is using Go in Utah?
+
+.image migrating-from-python/img/utah-company-logos.jpg 623 977
 
 * Gophercon 2014
 
-TODO: Add notes about Python mentions at Gophercon
+"After doing the Go tour, he felt competent enough to fix an issue.  That wouldn't have happened with Python or Ruby."
+
+"Adding new features can weaken your existing features."
+
+"Before the 1.0 release, *everything* was revisited with a critical eye, and it was asked 'What can we remove?'"
 
 * The High-Level View
 
@@ -109,7 +140,6 @@ Operator overloading
 
 Effective Go ([[http://golang.org/doc/effective_go.html]])
 
-
 * Zen of Python
 
 .code migrating-from-python/zen.txt
@@ -124,13 +154,20 @@ Effective Go ([[http://golang.org/doc/effective_go.html]])
 
 * Simple is better than complex
 
-- No decorators
-- No static methods
-- No class methods
-- No properties
-- No iterators
-- No generators
-- No exceptions
+Python is actually quite complex under the surface
+
+Go does not have
+
+- decorators (but I sure tried!)
+- static methods
+- class methods
+- properties
+- iterators
+- generators
+- exceptions
+- meta classes
+- class decorators
+- multiple inheritance
 
 * Flat is better than nested
 
@@ -167,11 +204,7 @@ Go
 
 .play migrating-from-python/errors.go
 
-* Errors
-
-What about Python's exception subtypes? (e.g., AttributeError, IOError, etc).
-
-.play migrating-from-python/error-handling.go /START OMIT/,/END OMIT/
+This sure beats a runtime error
 
 * Zero values
 
@@ -183,7 +216,7 @@ What about Python's exception subtypes? (e.g., AttributeError, IOError, etc).
 
 .play migrating-from-python/constructors.go /START OMIT/,/END OMIT/
 
-Remember field values can be used during instantiation...
+Remember field values can be specified during instantiation...
 
 .play migrating-from-python/constructors-2.go /START OMIT/,/END OMIT/
 
@@ -197,13 +230,45 @@ Capitalized names are exported
 
 .play migrating-from-python/encapsulation.go /START OMIT/,/END OMIT/
 
+* Slices vs. Lists
+
+.play migrating-from-python/slices.go /START OMIT/,/END OMIT/
+
+.play migrating-from-python/lists.py
+
+* Arrays
+
+.play migrating-from-python/arrays.go /START OMIT/,/END OMIT/
+
+* Slicing
+
+.play migrating-from-python/slicing.go
+
+* Slicing arrays
+
+.play migrating-from-python/array-slicing.go
+
+You can slice on an array, but it returns a slice
+
+* Maps vs. Dicts and Sets
+
+- Can't use `==` to compare maps
+- Sets in Go are just implemented as maps with empty values:
+.play migrating-from-python/set.go /START OMIT/,/END OMIT/
+
 * Duck typing
 
 .play migrating-from-python/duck.py
 
-* Structural typing
+* Structural typing using interfaces
 
 .play migrating-from-python/interfaces.go /START OMIT/,/END OMIT/
+
+* Errors
+
+What about Python's exception subtypes? (e.g., AttributeError, IOError, etc).
+
+.play migrating-from-python/error-handling.go /START OMIT/,/END OMIT/
 
 * Calling C code from Go
 
@@ -236,6 +301,8 @@ Similar to pip install...
 
 .code migrating-from-python/go-get-2.txt
 
+* go get example
+
 * gofmt (instead of PEP 8)
 
 Before:
@@ -252,6 +319,8 @@ After:
 
 [[http://godoc.org/net/url#User]]
 
+* godoc example
+
 * Unit testing
 
 .code migrating-from-python/unit-testing.txt
@@ -266,6 +335,8 @@ After:
 
 .image migrating-from-python/img/coverage.png
 
+* Unit testing example
+
 * Other tools
 
 - go build -race (race detection)
@@ -274,8 +345,23 @@ After:
 - cpuprofile
 - memprofile
 
+* What about my interactive interpreter?
+
+- Go compiles really quickly
+- [[http://play.golang.org]]
+- Unit tests are really easy (and fast)
+- I still use the Python interactive interpreter
+
 * Things I miss from Python
 
 - coding speed
 
 But...
+
+* Learning more
+
+[[http://tour.golang.org]]: Go language tour with exercises
+
+[[http://exercism.io]]: Crowd-sourced mentorship
+
+[[http://github.com/bgmerrell/presentations]]

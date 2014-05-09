@@ -1,1 +1,1 @@
-$ go get github.com/bgmerrell/goballclock
+$ go get github.com/bgmerrell/config
