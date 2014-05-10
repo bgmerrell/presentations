@@ -44,14 +44,14 @@ Compilation is too slow
 
 * What I dislike about Python
 
-Actual quite complex
+Actually quite complex
 
 Runtime errors
  
 It doesn't scale as well as I would like...
 
 - with team size (many ways to do the same thing, pep8)
-- with codebase size (runtine errors, type hierarchies, magic)
+- with codebase size (runtime errors, type hierarchies, magic)
 - with increasing performance demands (GIL, lack of concurrency primitives, interpreted)
 
 *  
