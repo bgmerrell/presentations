@@ -1,12 +1,59 @@
 Hack the Moon
 
 Brian G. Merrell
-Software Engineer, Rakuten MediaForge
+Software Engineer
 bgmerrell (Twitter, Gmail, GitHub, etc)
 
 * Goal of this talk
 
 Help with ideas and basic skills for hardware projects
+
+* The problem
+
+Story time...
+
+* Equipment
+
+* SparkFun Inventor's Kit
+
+[[https://www.sparkfun.com/products/12001]]
+
+* Arduino and Breadboard
+
+.image hack-the-moon/img/arduino-and-breadboard.jpg
+
+* Arduino
+
+- ATmega328 Microcontroller
+- Operates at 5v (powered via USB or AC-to-DC adapter)
+- 14 digital i/o pins
+- 6 analog i/o pins
+- 32KB flash memory
+- 2KB SRAM
+- 1K EEPROM
+- 16 MHz clock speed
+
+* Breadboard
+
+.image hack-the-moon/img/breadboard.jpg
+
+* IR Receiver Breakout ($9.95)
+
+.image hack-the-moon/img/ir-receiver.jpg
+
+* Max Power IR LED Kit ($2.95)
+
+.image hack-the-moon/img/power-ir-assembled.jpg
+
+* Grove Sound Sensor
+
+.image hack-the-moon/img/sound-sensor.jpg 626 848
+
+* Putting it together...
+
+* Max Power IR LED Kit (didn't come assembled)
+
+.image hack-the-moon/img/power-ir.jpg
 
 * Adventures in Soldering
 
@@ -20,15 +67,78 @@ Help with ideas and basic skills for hardware projects
 
 [[https://www.youtube.com/watch?v=f95i88OSWB4]]
 
-* SparkFun Inventor's Kit
+* Grove Sound Sensor, modified
 
-[[https://www.sparkfun.com/products/12001]]
+.image hack-the-moon/img/mic.jpg 574 761
 
-* Arduino and Breadboard
+* Prototype
 
-.image hack-the-moon/img/arduino-and-breadboard.jpg
+.image hack-the-moon/img/prototype.jpg 558 753
 
-* Breadboard
+* Step one: detect sound
 
-.image hack-the-moon/img/breadboard.jpg
+* Infrared
 
+*Pros*
+
+- Cheap
+- Widespread
+
+*Cons*
+
+- So many protocols
+- Confusing
+- Line-of-sight
+- Software libraries are difficult to find
+
+* Infrared
+
+"Unfortunately there are almost as many infrared protocols as there are devices that use them."
+
+-- arduino.cc
+
+"If you want to integrate the arduino into an existing infrared remote system, then you need to identify the protocol in use."
+
+-- arduino.cc
+
+"The lack of standardization creates many problems for consumers [such as] universal remotes that do not adequately control [all] devices."
+
+-- Wikipedia
+
+"Infrared is simple and solving your problem will be super easy."
+
+-- Some guy at work
+
+* Step two: decode signal
+
+* Step three: replay signal
+
+* Next steps
+
+1) Add light sensor
+
+2) Put it on a PCB
+
+- Do the board layout (using Eagle, probably)
+- Generate gerber files (de facto standard used by PCB industry)
+- Send to DorkPCB, BatchPCB (3 boards, $5-$10, 2+ weeks)
+- Remember to add ways to program the microcontroller (FTDI Serial USB, storage)
+
+* Bonus hacks
+
+* Baby swing
+
+[[http://www.instructables.com/id/Repair-your-FisherPrice-cradle-swing]]
+
+* H2OhNo! + Moteino for indoor/outdoor water sensors
+
+[[https://www.sparkfun.com/products/12069]]
+[[http://lowpowerlab.com/moteino/]]
+
+* Piezo music code
+
+* Go Programming Language
+
+- [[http://gobot.io]]
+- [[http://embd.kidoman.io]]
+- [[http://utahgophers.com]]
