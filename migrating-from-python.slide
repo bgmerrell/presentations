@@ -158,7 +158,6 @@ Python is actually quite complex under the surface
 
 Go does not have
 
-- decorators (but I sure tried!)
 - static methods
 - class methods
 - properties
@@ -168,6 +167,12 @@ Go does not have
 - meta classes
 - class decorators
 - multiple inheritance
+- default argument values
+- decorators (but I sure tried!)
+
+* Instead of iterators...
+
+.code migrating-from-python/leveldb-iter.go
 
 * Flat is better than nested
 
