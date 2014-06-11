@@ -1,0 +1,12 @@
+$GOPATH/bin/
+    hello              # command executable
+$GOPATH/pkg/
+    linux_amd64/       # this will reflect your OS and architecture
+        github.com/user/
+            newmath.a  # package object
+$GOPATH/src/
+    github.com/user/
+        hello/
+            hello.go   # command source
+        newmath/
+            sqrt.go    # package source

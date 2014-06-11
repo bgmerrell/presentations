@@ -1,7 +1,7 @@
 Introduction to Go
 
 Brian G. Merrell
-Fungineer, Rakuten MediaForge
+Fungineer, Rakuten Marketing
 bgmerrell (Twitter, Gmail, GitHub, etc)
 
 *  
@@ -26,15 +26,15 @@ Understand Go well enough to reason about when and where to use it
 
 * Justification -- Why another language?
 
-C++ is too complex
+"Programming had become too difficult"
+
+C++, Java: Too complex, hard to use, verbose.
 
 Compilation is too slow
 
-"Programming had become too difficult"
-
-Many programmers were choosing ease over safety and efficiency
-
 The computing landscape and scale has changed
+
+Many programmers were choosing ease (e.g., Python, Ruby) over safety and efficiency
 
 * Adoption
 
@@ -56,19 +56,17 @@ Adoption by other companies...
 
 .image intro-to-go/img/utah-company-logos.jpg 623 977
 
-* Other companies hiring Go programmers:
+* Other companies using Go:
 
 - Adobe (Site reliability in Seattle)
 - Hewlett-Packard (SE in Colorado)
 - Thomson Reuters
 - Intel
 - Breitbart (?)
-
-In Utah
-
-- Rakuten MediaForge
-- SpaceMonkey
-- Steal Network
+- Apcera
+- Docker, Inc.
+- Percona
+- Apple (!)
 
 * Praise & Predictions
 
@@ -78,7 +76,7 @@ In Utah
 
 * Learning a new language
 
-"Go is a new language. Although it borrows ideas from existing languages, it has unusual properties that make effective Go programs different in character from programs written in its relatives. A straightforward translation of a C++ or Java program into Go is unlikely to produce a satisfactory result—Java programs are written in Java, not Go. On the other hand, thinking about the problem from a Go perspective could produce a successful but quite different program. In other words, to write Go well, it's important to understand its properties and idioms. It's also important to know the established conventions for programming in Go, such as naming, formatting, program construction, and so on, so that programs you write will be easy for other Go programmers to understand."
+"Go is a new language. Although it borrows ideas from existing languages, it has unusual properties that make effective Go programs different in character from programs written in its relatives. A straightforward translation of a C++ or Java program into Go is unlikely to produce a satisfactory result—Java programs are written in Java, not Go. On the other hand, thinking about the problem from a Go perspective could produce a successful but quite different program. In other words, to write Go well, it's important to understand its properties and idioms."
 
 Effective Go ([[http://golang.org/doc/effective_go.html]])
 
@@ -172,7 +170,7 @@ No implicit conversions
 
 * Slices
 
-.play intro-to-go/slices.go
+.play intro-to-go/slices.go /START OMIT/,/END OMIT/
 
 * Range
 
@@ -239,6 +237,38 @@ If in doubt, use a pointer receiver (it will behave like a method in other moder
 
 .play intro-to-go/concurrency-for-with-select.go
 
-* 
+* Code organization
 
-.image intro-to-go/img/utah-gopher-announce.jpg 623 977
+.code intro-to-go/code-organization.txt
+
+.code intro-to-go/code-organization.go
+
+.code intro-to-go/code-organization-2.txt
+
+* Code organization
+
+.code intro-to-go/code-organization-3.txt
+
+* Great tooling
+
+gofmt
+
+go get
+
+go build [-race]
+
+go test [-cover] [-bench]
+
+go vet
+
+godoc
+
+cpuprofile / memprofile
+
+* Learning more
+
+[[http://tour.golang.org]]: Go language tour with exercises
+
+[[http://exercism.io]]: Crowd-sourced mentorship
+
+[[http://github.com/bgmerrell/presentations]]

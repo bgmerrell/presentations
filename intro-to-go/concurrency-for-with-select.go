@@ -6,7 +6,7 @@ import (
 )
 
 func main() {
-    tick := time.Tick(1 * time.Second)
+    var tick chan time.Time = time.Tick(1 * time.Second)
     boom := time.After(5 * time.Second)
     for {
         select {

@@ -2,18 +2,15 @@ package main
 
 import "fmt"
 
+// START OMIT
 func main() {
-    m := make(map[string]int)
-
-    m["Answer"] = 42
-    fmt.Println("The value:", m["Answer"])
-
-    m["Answer"] = 48
-    fmt.Println("The value:", m["Answer"])
-
-    delete(m, "Answer")
-    fmt.Println("The value:", m["Answer"])
-
-    v, ok := m["Answer"]
-    fmt.Println("The value:", v, "Present?", ok)
+	var letters []string
+	letters = []string{"a", "b", "c", "d"}
+	fmt.Println(letters)
+	letters = append(letters, "e")
+	more := []string{"f", "g", "h"}
+	letters = append(letters, more...)
+	fmt.Println(letters)
 }
+
+// END OMIT
