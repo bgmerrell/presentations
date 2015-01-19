@@ -1,0 +1,8 @@
+$ mkdir $HOME/go
+$ export GOPATH=$HOME/go
+$ export PATH=$PATH:$GOPATH/bin
+$ mkdir -p $GOPATH/src/github.com/user/hello
+$ vim $GOPATH/src/github.com/user/hello/hello.go
+$ mkdir $GOPATH/src/github.com/user/newmath
+$ vim $GOPATH/src/github.com/user/newmath/sqrt.go
+$ go install github.com/user/hello

@@ -1,0 +1,218 @@
+Programming in Go
+
+Brian G. Merrell
+Software Engineer, Rakuten Marketing
+bgmerrell (Twitter, Gmail, GitHub, etc)
+
+* Goal of this talk
+
+Understand Go well enough to reason about when and where to use it
+
+.image programming-in-go/img/gopher.png
+
+* History
+
+- Appeared in 2009 (with 1.0 being released March 2012)
+
+- Ken Thompson (Unix, B), Rob Pike (Plan 9), Robert Griesemer (Java HotSpot VM)
+
+- Wanted to build a language that is efficient, safe, and easy to use
+
+- Doing research into programming language design was not the purpose
+
+* Justification -- Why another language?
+
+"Programming had become too difficult"
+
+C++, Java: Too complex, hard to use, verbose.
+
+Compilation is too slow
+
+The computing landscape and scale has changed
+
+Many programmers were choosing ease (i.e., Perlythonubyscript) over safety and efficiency
+
+* Go is...
+
+Compiled (to machine code)
+
+Strongly typed
+
+Statically typed (with type inference)
+
+Garbage collected
+
+Similar to C in its syntax
+
+Capable of statically verified duck typing (via interfaces)
+
+Open Source
+
+* Go does not have...
+
+Classes
+
+Exceptions
+
+Assertions
+
+Templates / generics (for now)
+
+Operator overloading
+
+Macros
+
+A set type
+
+* Adoption
+
+.image programming-in-go/img/redmonk-languages-01-2015.png 561 879
+
+* Companies using Go
+
+.image programming-in-go/img/companies-using-go-2015.jpg 561 977
+
+* Today's Language Landscape
+
+- Following graphs taken from Brad Fitzpatrick's GoCon Tokyo talk: "Go: 90% Perfect, 100% of the time."
+- Subjective, personal opinions
+- It's often about trade-offs
+
+* Fast & Fun
+
+.image programming-in-go/img/funfast.svg
+
+* Concurrency
+
+.image programming-in-go/img/concurrency.svg
+
+* Statically Checked
+
+.image programming-in-go/img/generics.svg
+
+* Learning a new language
+
+"Go is a new language. Although it borrows ideas from existing languages, it has unusual properties that make effective Go programs different in character from programs written in its relatives. A straightforward translation of a C++ or Java program into Go is unlikely to produce a satisfactory result—Java programs are written in Java, not Go. On the other hand, thinking about the problem from a Go perspective could produce a successful but quite different program. In other words, to write Go well, it's important to understand its properties and idioms."
+
+Effective Go ([[http://golang.org/doc/effective_go.html]])
+
+* Hello World
+
+.code programming-in-go/hello-world.go
+
+* Basic types
+
+.code programming-in-go/basic-types.txt
+
+* Variable declarations
+
+.play programming-in-go/variable-declarations.go
+
+* Looping, if/else, switch
+
+TODO
+
+* Structs (defining your own types)
+
+.play programming-in-go/structs.go
+
+* Don't fear Go pointers
+
+.play programming-in-go/pointers.go /START OMIT/,/END OMIT/
+
+* Slices
+
+.play programming-in-go/slices.go /START OMIT/,/END OMIT/
+
+* Range
+
+.play programming-in-go/range.go
+
+* Maps
+
+.play programming-in-go/maps.go
+
+* Function values and function literals
+
+.play programming-in-go/func-vals-and-func-literals.go
+
+* Methods
+
+.play programming-in-go/methods.go
+
+* Methods continued
+
+.play programming-in-go/methods-pointers.go
+
+* Pointer Receivers vs. Value Receivers
+
+If in doubt, use a pointer receiver (it will behave like a method in other modern languages)
+
+*Specifics*
+
+- A pointer receiver should be used to persist object modifications
+
+- A pointer receiver should be used for large objects
+
+- A value receiver can be used for small objects (but the thing about persistence still applies)
+
+* Methods on any type
+
+.play programming-in-go/methods-on-any-type.go
+
+* Embedding Structs
+
+.play programming-in-go/struct-embedding.go /START OMIT/,/END OMIT/
+
+* Interfaces
+
+.play programming-in-go/interfaces.go /START OMIT/,/END OMIT/
+
+
+* Empty interfaces and variadic functions
+
+.code programming-in-go/fmt-println.go
+
+* Errors
+
+.play programming-in-go/errors-simple.go /START OMIT/,/END OMIT/
+
+* Errors continued
+
+.play programming-in-go/errors.go /START OMIT/,/END OMIT/
+
+* Concurrency
+
+.play programming-in-go/concurrency.go /START OMIT/,/END OMIT/
+
+* Concurrency continued
+
+.play programming-in-go/concurrency-for-with-select.go
+
+* Great tooling
+
+gofmt
+
+go get
+
+go build [-race]
+
+go test [-cover] [-bench]
+
+go vet
+
+godoc
+
+cpuprofile / memprofile
+
+* Learning more
+
+[[http://tour.golang.org]]: Go language tour with exercises
+
+[[https://golang.org/doc/effective_go.html]]: Effective Go
+
+[[https://golang.org/ref/spec]]: Go Language Specification
+
+[[https://github.com/golang/go]]: Go source
+
+[[http://utahgophers.com]]: Utah Gopher User Group
