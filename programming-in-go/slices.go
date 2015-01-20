@@ -9,7 +9,7 @@ func main() {
 	fmt.Println(letters)
 	letters = append(letters, "e")
 	more := []string{"f", "g", "h"}
-	letters = append(letters, more...)
+	letters = append(letters, more...)  // append is a variadic function
 	fmt.Println(letters)
 }
 

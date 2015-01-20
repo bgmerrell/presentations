@@ -10,12 +10,12 @@ type Coordinate struct {
     name string
 }
 
-func getCoordPtr() *Coordinate {
+func NewCoordinate() *Coordinate {
 	return &Coordinate{1, 2, 3, "foo"}
 }
 
 func main() {
-	var cp *Coordinate = getCoordPtr()
+	var cp *Coordinate = NewCoordinate()
 	fmt.Println(cp)
 	fmt.Printf("%T\n", cp)
 	fmt.Println(*cp)

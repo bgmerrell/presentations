@@ -42,6 +42,8 @@ Statically typed (with type inference)
 
 Garbage collected
 
+Pass-by-value
+
 Similar to C in its syntax
 
 Capable of statically verified duck typing (via interfaces)
@@ -56,13 +58,15 @@ Exceptions
 
 Assertions
 
-Templates / generics (for now)
+Templates / generics
 
 Operator overloading
 
+Function overloading
+
 Macros
 
-A set type
+Many abstractions you might be used to, e.g: a set type, generators, decorators, etc.
 
 * Adoption
 
@@ -124,8 +128,6 @@ TODO
 
 .play programming-in-go/slices.go /START OMIT/,/END OMIT/
 
-* Range
-
 .play programming-in-go/range.go
 
 * Maps
@@ -136,11 +138,13 @@ TODO
 
 .play programming-in-go/func-vals-and-func-literals.go
 
+* Types with reference-like behavior
+
+- Map
+- Slice
+- Channel
+
 * Methods
-
-.play programming-in-go/methods.go
-
-* Methods continued
 
 .play programming-in-go/methods-pointers.go
 

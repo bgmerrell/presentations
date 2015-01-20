@@ -14,7 +14,6 @@ func (p Point) DoubleValues() {
 
 func main() {
 	p := Point{X: 2, Y: 4}
-	fmt.Println(p)
 	p.DoubleValues()
-	fmt.Println(p)
+	fmt.Println(p) // What do you expect here?
 }
