@@ -4,7 +4,12 @@ import (
 	"errors"
 	"fmt"
 	"math/rand"
+	"time"
 )
+
+func init() {
+	rand.Seed( time.Now().UTC().UnixNano())
+}
 
 // START OMIT
 func getRandom(numbers []int) (int, error) {

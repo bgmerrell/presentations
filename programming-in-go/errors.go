@@ -11,21 +11,23 @@ type MyError struct {
 	What string
 }
 
-func (e *MyError) Error() string {
+func (e MyError) Error() string {
 	return fmt.Sprintf("at %s, %s",
 		e.When, e.What)
 }
 
 func run() error {
-	return &MyError{
+	return MyError{
 		time.Now(),
 		"it didn't work",
 	}
 }
 
 func main() {
-	if err := run(); err != nil {
-		fmt.Println(err)
+	err := run()
+	switch err.(type) {
+		case MyError: fmt.Printf("MyError: %s", err)
+		default: fmt.Println("Other error: %s", err)
 	}
 }
 // END OMIT

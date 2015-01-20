@@ -112,9 +112,9 @@ Effective Go ([[http://golang.org/doc/effective_go.html]])
 
 .play programming-in-go/variable-declarations.go
 
-* Looping, if/else, switch
+* Looping, if/else, switch, const
 
-TODO
+.play programming-in-go/loop-switch-if.go
 
 * Structs (defining your own types)
 
@@ -181,7 +181,7 @@ If in doubt, use a pointer receiver (it will behave like a method in other moder
 
 .play programming-in-go/errors-simple.go /START OMIT/,/END OMIT/
 
-* Errors continued
+* Custom errors and type switching
 
 .play programming-in-go/errors.go /START OMIT/,/END OMIT/
 
