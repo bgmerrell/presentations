@@ -4,6 +4,15 @@ Brian G. Merrell
 Software Engineer, Rakuten Marketing
 bgmerrell (Twitter, Gmail, GitHub, etc)
 
+* Who am I?
+
+- Running primarily Unix/Linux since openSUSE 5.1 (1997)
+- First network: Linux, PS2, and openBSD router and firewall (33.6 kbps)
+- First jobs: IPS, Samba File Servers
+- Novell (2006-2010): Linux Desktop (Accessibility, Google Chrome)
+- Fusion-io (2010-2014): Distributed systems (Python), embedded systems (C)
+- Rakuten (2014-Present): Full-time Go development
+
 * Goal of this talk
 
 Understand Go well enough to reason about when and where to use it
@@ -40,15 +49,15 @@ Strongly typed
 
 Statically typed (with type inference)
 
+Capable of statically verified duck typing (via interfaces)
+
 Garbage collected
 
 Pass-by-value
 
 Similar to C in its syntax
 
-Capable of statically verified duck typing (via interfaces)
-
-Open Source
+Open Source (now on GitHub!)
 
 * Go does not have...
 
@@ -64,9 +73,11 @@ Operator overloading
 
 Function overloading
 
+Optional function parameters
+
 Macros
 
-Many abstractions you might be used to, e.g: a set type, generators, decorators, etc.
+Many abstractions you might be used to, e.g: a set type, an ordered map, generators, decorators, iterators, function to delete array indexes etc.
 
 * Adoption
 
@@ -90,9 +101,25 @@ Many abstractions you might be used to, e.g: a set type, generators, decorators,
 
 .image programming-in-go/img/concurrency.svg
 
-* Statically Checked
+* What I dislike about Go
+- Inconsistencies for primitives, some keywords
+- Despite small language there are still too many ways to do the same thing
+- Lack of generics brings some awkwardness (proliferation of type-specific functions)
+- Runtime is still young (GC, goroutine management)
+- Still a lot of immature libraries
+- No big innovation to promote programming language research
 
-.image programming-in-go/img/generics.svg
+* Why I like Go
+- I almost never actually care about the things I dislike
+- Get stuff done (Go is a pragmatic language)
+- Concurrency is a breeze
+- Compile time checks (fast!), dynamic language feel
+- Replaces code that I would have written in a dynamic language
+- Fast (relatively, of course)
+- Small language
+- Easy to read (programming is communicating)
+- Great tooling
+- Cool community
 
 * Learning a new language
 
@@ -159,6 +186,8 @@ If in doubt, use a pointer receiver (it will behave like a method in other moder
 - A pointer receiver should be used for large objects
 
 - A value receiver can be used for small objects (but the thing about persistence still applies)
+
+For more information: [[https://github.com/golang/go/wiki/CodeReviewComments#receiver-type]]
 
 * Methods on any type
 
