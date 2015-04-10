@@ -92,8 +92,8 @@ Many abstractions you might be used to, e.g: a set type, an ordered map, generat
 * Today's Language Landscape
 
 - Following graphs taken from Brad Fitzpatrick's GoCon Tokyo talk: "Go: 90% Perfect, 100% of the time."
-- Subjective, personal opinions
-- It's often about trade-offs
+- Subjective
+- There's always trade-offs to consider
 
 * Fast & Fun
 
@@ -195,11 +195,13 @@ For more information: [[https://github.com/golang/go/wiki/CodeReviewComments#rec
 
 .play programming-in-go/methods-on-any-type.go
 
-* Embedding Structs
+* Polymorphism and Inheritance Review
 
-TODO
+- "Ability of one type to stand in for many types"[1]
+- "Object-oriented programming languages offer subtyping polymorphism using subclassing (also known as inheritance)."[2]
 
-.play programming-in-go/struct-embedding.go /START OMIT/,/END OMIT/
+.caption [1] Koenig, A. (2000). Accelerated C++.
+.caption [2] [[http://en.wikipedia.org/wiki/Polymorphism_%28computer_science%29]]
 
 * Interfaces
 
@@ -224,6 +226,16 @@ TODO
 * Custom errors and type switching
 
 .play programming-in-go/errors.go /START OMIT/,/END OMIT/
+
+* Embedding
+
+TODO
+
+.play programming-in-go/embedding.go /START OMIT/,/END OMIT/
+
+* Real World Embedding (go/src/net/http/server.go)
+
+.code programming-in-go/embedding-mutex.go
 
 * Concurrency
 
