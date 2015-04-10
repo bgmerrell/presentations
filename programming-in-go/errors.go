@@ -6,28 +6,28 @@ import (
 )
 
 // START OMIT
-type MyError struct {
+type TimestampErr struct {
 	When time.Time
 	What string
 }
 
-func (e *MyError) Error() string {
+func (t *TimestampErr) Error() string {
 	return fmt.Sprintf("at %s, %s",
-		e.When, e.What)
+		t.When, t.What)
 }
 
 func run() error {
-	return &MyError{time.Now(), "it didn't work"}
+	return &TimestampErr{time.Now(), "it didn't work"}
 }
 
 func main() {
 	err := run()
 	switch err.(type) {
-	case *MyError:
-		fmt.Printf("MyError: %s", err)
+	case *TimestampErr:
+		fmt.Println("Got TimestampErr")
 	default:
-		fmt.Println("Other error: %s", err)
+		fmt.Println("Got non-TimestampErr")
 	}
+	fmt.Println(err)
 }
-
 // END OMIT

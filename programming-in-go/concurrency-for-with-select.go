@@ -6,7 +6,7 @@ import (
 )
 
 func main() {
-    var tick chan time.Time = time.Tick(1 * time.Second)
+    var tick <-chan time.Time = time.Tick(2 * time.Second)
     boom := time.After(5 * time.Second)
     for {
         select {
@@ -17,7 +17,7 @@ func main() {
             return
         default:
             fmt.Println("    .")
-            time.Sleep(500 * time.Millisecond)
+            time.Sleep(1 * time.Second)
         }
     }
 }

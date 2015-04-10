@@ -2,16 +2,16 @@ Programming in Go
 
 Brian G. Merrell
 Software Engineer, Rakuten Marketing
-bgmerrell (Twitter, Gmail, GitHub, etc)
+bgmerrell (Twitter, Gmail, GitHub, Freenode, etc)
 
 * Who am I?
 
-- Running primarily Unix/Linux since openSUSE 5.1 (1997)
-- First network: Linux, PS2, and openBSD router and firewall (33.6 kbps)
-- First jobs: IPS, Samba File Servers
-- Novell (2006-2010): Linux Desktop (Accessibility, Google Chrome)
-- Fusion-io (2010-2014): Distributed systems (Python), embedded systems (C)
-- Rakuten (2014-Present): Full-time Go development
+- Running primarily Unix/Linux since S.u.S.E. (openSUSE) 5.1 (1997)
+- First network: Linux, PS2, and OpenBSD router and firewall (33.6 kbps)
+- First jobs: Dial-up ISP, Samba File Servers
+- Novell (2006-2010): Linux Desktop (Accessibility, Google Chrome) (C, C++, C#, Java, Python)
+- Fusion-io (2010-2014): Distributed and embedded systems (C, Python)
+- Rakuten (2014-Present): Full-time distributed systems and web backend development in Go
 
 * Goal of this talk
 
@@ -77,6 +77,8 @@ Optional function parameters
 
 Macros
 
+Implicit type conversions
+
 Many abstractions you might be used to, e.g: a set type, an ordered map, generators, decorators, iterators, function to delete array indexes etc.
 
 * Adoption
@@ -103,7 +105,7 @@ Many abstractions you might be used to, e.g: a set type, an ordered map, generat
 
 * What I dislike about Go
 - Inconsistencies for primitives, some keywords
-- Despite small language there are still too many ways to do the same thing
+- Despite being small language there are still too many ways to do the same thing
 - Lack of generics brings some awkwardness (proliferation of type-specific functions)
 - Runtime is still young (GC, goroutine management)
 - Still a lot of immature libraries
@@ -195,16 +197,25 @@ For more information: [[https://github.com/golang/go/wiki/CodeReviewComments#rec
 
 * Embedding Structs
 
+TODO
+
 .play programming-in-go/struct-embedding.go /START OMIT/,/END OMIT/
 
 * Interfaces
 
 .play programming-in-go/interfaces.go /START OMIT/,/END OMIT/
 
-
-* Empty interfaces and variadic functions
+* Empty interfaces (and variadic functions)
 
 .code programming-in-go/fmt-println.go
+
+* Real World Interfaces (go/src/sort/sort.go)
+
+.code programming-in-go/interfaces-sort.go
+
+* Real World Interfaces
+
+.play programming-in-go/interfaces-sort2.go /START OMIT/,/END OMIT/
 
 * Errors
 
@@ -216,11 +227,23 @@ For more information: [[https://github.com/golang/go/wiki/CodeReviewComments#rec
 
 * Concurrency
 
-.play programming-in-go/concurrency.go /START OMIT/,/END OMIT/
+.play programming-in-go/concurrency-simple.go /START OMIT/,/END OMIT/
+
+* Channels
+
+TODO
 
 * Concurrency continued
 
 .play programming-in-go/concurrency-for-with-select.go
+
+* Real World Concurrency
+
+.code programming-in-go/concurrency-for-with-select2.go
+
+* More Real World Concurrency
+
+.code programming-in-go/concurrency-for-with-select3.go
 
 * Great tooling
 
@@ -228,24 +251,30 @@ gofmt
 
 go get
 
-go build [-race]
+go build [-race] ([[https://golang.org/doc/articles/race_detector.html]])
 
-go test [-cover] [-bench]
+go test [-cover] ([[https://blog.golang.org/cover]])
+
+go test [-bench] ([[http://dave.cheney.net/2013/06/30/how-to-write-benchmarks-in-go]])
 
 go vet
 
 godoc
 
-cpuprofile / memprofile
+cpuprofile / memprofile ([[http://blog.golang.org/profiling-go-programs]])
 
-* Learning more
+* Next steps
 
 [[http://tour.golang.org]]: Go language tour with exercises
 
+[[https://golang.org/doc/install]]: Installing Go
+
+[[https://golang.org/doc/code.html]]: How to Write Go Code
+
 [[https://golang.org/doc/effective_go.html]]: Effective Go
+
+[[http://utahgophers.com]]: Utah Gopher User Group
 
 [[https://golang.org/ref/spec]]: Go Language Specification
 
 [[https://github.com/golang/go]]: Go source
-
-[[http://utahgophers.com]]: Utah Gopher User Group
