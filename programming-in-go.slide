@@ -226,7 +226,7 @@ For more information: [[https://github.com/golang/go/wiki/CodeReviewComments#rec
 
 .code programming-in-go/interfaces-sort.go
 
-* Real World Interfaces
+* Real World Interfaces (continued)
 
 .play programming-in-go/interfaces-sort2.go /START OMIT/,/END OMIT/
 
@@ -254,11 +254,11 @@ For more information: [[https://github.com/golang/go/wiki/CodeReviewComments#rec
 
 .play programming-in-go/buffered-channels.go
 
-* More Buffered Channels
+* Buffered Channels (continued)
 
 .play programming-in-go/buffered-channels2.go /START OMIT/,/END OMIT/
 
-* Concurrency continued
+* Select
 
 .play programming-in-go/concurrency-for-with-select.go
 
@@ -266,7 +266,7 @@ For more information: [[https://github.com/golang/go/wiki/CodeReviewComments#rec
 
 .code programming-in-go/concurrency-for-with-select2.go
 
-* More Real World Concurrency
+* Real World Concurrency (continued)
 
 .code programming-in-go/concurrency-for-with-select3.go
 
