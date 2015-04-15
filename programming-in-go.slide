@@ -106,7 +106,7 @@ Many abstractions you might be used to, e.g: a set type, an ordered map, generat
 * What I dislike about Go
 - Inconsistencies for primitives, some keywords
 - Despite being small language there are still too many ways to do the same thing
-- Lack of generics brings some awkwardness (proliferation of type-specific functions)
+- Lack of generics can bring some awkwardness
 - Runtime is still young (GC, goroutine management)
 - Still a lot of immature libraries
 - No big innovation to promote programming language research
@@ -197,8 +197,11 @@ For more information: [[https://github.com/golang/go/wiki/CodeReviewComments#rec
 
 * Polymorphism and Inheritance Review
 
-- "Ability of one type to stand in for many types"[1]
-- "Object-oriented programming languages offer subtyping polymorphism using subclassing (also known as inheritance)."[2]
+- Polymorphism defined: "Ability of one type to stand in for many types"[1]
+- Most statically-typed "object-oriented programming languages offer subtyping polymorphism using subclassing (also known as inheritance)."[2]
+- Most dynamically-typed languages provide polymorphism via duck typing and inheritance is used for borrowing implementation
+- Go provides polymorphism via interfaces (think statically verified duck typing)
+- Go provides implementation borrowing via embedding
 
 .caption [1] Koenig, A. (2000). Accelerated C++.
 .caption [2] [[http://en.wikipedia.org/wiki/Polymorphism_%28computer_science%29]]
@@ -245,7 +248,15 @@ For more information: [[https://github.com/golang/go/wiki/CodeReviewComments#rec
 
 * Channels
 
-.play programming-in-go/channels.go
+.play programming-in-go/channels.go /START OMIT/,/END OMIT/
+
+* Buffered Channels
+
+.play programming-in-go/buffered-channels.go
+
+* More Buffered Channels
+
+.play programming-in-go/buffered-channels2.go /START OMIT/,/END OMIT/
 
 * Concurrency continued
 
@@ -258,6 +269,10 @@ For more information: [[https://github.com/golang/go/wiki/CodeReviewComments#rec
 * More Real World Concurrency
 
 .code programming-in-go/concurrency-for-with-select3.go
+
+* Web Server
+
+.play programming-in-go/web-server.go
 
 * Great tooling
 
@@ -277,6 +292,17 @@ godoc
 
 cpuprofile / memprofile ([[http://blog.golang.org/profiling-go-programs]])
 
+* Common mistakes
+
+- The closure mistake
+.code programming-in-go/closure-mistake.go
+- Not accepting interfaces (and underutilizing interfaces in general)
+- Not protecting concurrent access to shared state (e.g., maps)
+- Confusing embedding with inheritance
+- Defaulting to 3rd party libraries (web frameworks, unit testing frameworks)
+- ALL_CAPS constants
+- Receiver type
+
 * Next steps
 
 [[http://tour.golang.org]]: Go language tour with exercises
@@ -292,3 +318,4 @@ cpuprofile / memprofile ([[http://blog.golang.org/profiling-go-programs]])
 [[https://golang.org/ref/spec]]: Go Language Specification
 
 [[https://github.com/golang/go]]: Go source
+
