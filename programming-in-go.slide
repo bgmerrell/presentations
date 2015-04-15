@@ -11,7 +11,7 @@ bgmerrell (Twitter, Gmail, GitHub, Freenode, etc)
 - First jobs: Dial-up ISP, Samba File Servers
 - Novell (2006-2010): Linux Desktop (Accessibility, Google Chrome) (C, C++, C#, Java, Python)
 - Fusion-io (2010-2014): Distributed and embedded systems (C, Python)
-- Rakuten (2014-Present): Full-time distributed systems and web backend development in Go
+- Rakuten (2014-Present): Distributed systems and web backend development (Go)
 
 * Goal of this talk
 
@@ -203,6 +203,14 @@ For more information: [[https://github.com/golang/go/wiki/CodeReviewComments#rec
 .caption [1] Koenig, A. (2000). Accelerated C++.
 .caption [2] [[http://en.wikipedia.org/wiki/Polymorphism_%28computer_science%29]]
 
+* Embedding
+
+.play programming-in-go/embedding.go /START OMIT/,/END OMIT/
+
+* Real World Embedding (go/src/net/hosts.go)
+
+.play programming-in-go/embedding2.go
+
 * Interfaces
 
 .play programming-in-go/interfaces.go /START OMIT/,/END OMIT/
@@ -227,12 +235,6 @@ For more information: [[https://github.com/golang/go/wiki/CodeReviewComments#rec
 
 .play programming-in-go/errors.go /START OMIT/,/END OMIT/
 
-* Embedding
-
-TODO
-
-.play programming-in-go/embedding.go /START OMIT/,/END OMIT/
-
 * Real World Embedding (go/src/net/http/server.go)
 
 .code programming-in-go/embedding-mutex.go
@@ -243,7 +245,7 @@ TODO
 
 * Channels
 
-TODO
+.play programming-in-go/channels.go
 
 * Concurrency continued
 

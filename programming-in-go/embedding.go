@@ -5,22 +5,27 @@ import (
 )
 
 // START OMIT
-type Food struct {
-	Calories int
+type Entity struct {
+	id string
+	size int
 }
 
-func (f *Food) String() string {
-	return "I'm a generic food"
+func (e *Entity) SizeDescription() string {
+	switch {
+	case e.size < 100: return "Small"
+	case e.size < 200: return "Medium"
+	default: return "Large"
+	}
 }
 
-type Pizza struct {
-	Food
-	Sauce string
+type Cow struct {
+	Entity
+	isFemale bool
 }
 
 func main() {
-	p := Pizza{}
-	p.Sauce = "tomato"
-	fmt.Printf("%s\n", p.String())
+	c := Cow{}
+	c.size = 150
+	fmt.Println(c.SizeDescription())
 }
 // END OMIT
