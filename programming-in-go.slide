@@ -212,15 +212,11 @@ For more information: [[https://github.com/golang/go/wiki/CodeReviewComments#rec
 
 * Real World Embedding (go/src/net/hosts.go)
 
-.play programming-in-go/embedding2.go
+.code programming-in-go/embedding2.go
 
 * Interfaces
 
 .play programming-in-go/interfaces.go /START OMIT/,/END OMIT/
-
-* Empty interfaces (and variadic functions)
-
-.code programming-in-go/fmt-println.go
 
 * Real World Interfaces (go/src/sort/sort.go)
 
@@ -230,6 +226,10 @@ For more information: [[https://github.com/golang/go/wiki/CodeReviewComments#rec
 
 .play programming-in-go/interfaces-sort2.go /START OMIT/,/END OMIT/
 
+* Empty interfaces (and variadic functions)
+
+.code programming-in-go/fmt-println.go
+
 * Errors
 
 .play programming-in-go/errors-simple.go /START OMIT/,/END OMIT/
@@ -237,10 +237,6 @@ For more information: [[https://github.com/golang/go/wiki/CodeReviewComments#rec
 * Custom errors and type switching
 
 .play programming-in-go/errors.go /START OMIT/,/END OMIT/
-
-* Real World Embedding (go/src/net/http/server.go)
-
-.code programming-in-go/embedding-mutex.go
 
 * Concurrency
 
