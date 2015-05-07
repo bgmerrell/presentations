@@ -33,7 +33,7 @@ Understand Go well enough to reason about when and where to use it
 
 "Programming had become too difficult"
 
-C++, Java: Too complex, hard to use, verbose.
+C++, Java: Too complex, hard to use, verbose
 
 Compilation is too slow
 
@@ -89,6 +89,10 @@ Many abstractions you might be used to, e.g: a set type, an ordered map, generat
 
 .image programming-in-go/img/companies-using-go-2015.jpg 561 977
 
+* Where can I use Go in the technology stack?
+
+.image programming-in-go/img/go-spectrum.gif 561 977
+
 * Today's Language Landscape
 
 - Following graphs taken from Brad Fitzpatrick's GoCon Tokyo talk: "Go: 90% Perfect, 100% of the time."
@@ -104,10 +108,12 @@ Many abstractions you might be used to, e.g: a set type, an ordered map, generat
 .image programming-in-go/img/concurrency.svg
 
 * What I dislike about Go
+- Ungoogleable name (use golang)
 - Inconsistencies for primitives, some keywords
 - Despite being small language there are still too many ways to do the same thing
 - Lack of generics can bring some awkwardness
 - Runtime is still young (GC, goroutine management)
+- Not suitable for (non-OS) embedded software
 - Still a lot of immature libraries
 - No big innovation to promote programming language research
 
@@ -315,3 +321,6 @@ cpuprofile / memprofile ([[http://blog.golang.org/profiling-go-programs]])
 
 [[https://github.com/golang/go]]: Go source
 
+* 
+
+.image programming-in-go/img/utah-gopher-announce-with-day.png 561 977

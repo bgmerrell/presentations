@@ -27,7 +27,7 @@ func handle() {
 }
 
 func main() {
-	rand.Seed(time.Now().UTC().UnixNano())
+	rand.Seed(42)
 	wg.Add(20)
 	for i := 0; i < 20; i++ {
 		go handle()
