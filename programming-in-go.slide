@@ -15,7 +15,7 @@ bgmerrell (Twitter, Gmail, GitHub, Freenode, etc)
 
 * Goal of this talk
 
-Understand Go well enough to reason about when and where to use it
+Understand Go well enough to reason about when and where to use it, and to facilitate becoming proficient.
 
 .image programming-in-go/img/gopher.png
 
@@ -23,7 +23,7 @@ Understand Go well enough to reason about when and where to use it
 
 - Appeared in 2009 (with 1.0 being released March 2012)
 
-- Ken Thompson (Unix, B), Rob Pike (Plan 9), Robert Griesemer (Java HotSpot VM)
+- Ken Thompson (Unix, B), Rob Pike (Plan 9, UTF8), Robert Griesemer (Java HotSpot VM)
 
 - Wanted to build a language that is efficient, safe, and easy to use
 
@@ -320,6 +320,8 @@ cpuprofile / memprofile ([[http://blog.golang.org/profiling-go-programs]])
 [[https://golang.org/ref/spec]]: Go Language Specification
 
 [[https://github.com/golang/go]]: Go source
+
+[[http://gophercon.com]]: Gophercon 2015 (July 7-10th)
 
 * 
 
