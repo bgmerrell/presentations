@@ -1,0 +1,457 @@
+Hands-on Programming in Go
+
+Brian G. Merrell
+Software Engineer, Rakuten Marketing
+bgmerrell (Twitter, Gmail, GitHub, Freenode, etc)
+
+* Who am I?
+
+- Running primarily Unix/Linux since S.u.S.E. (openSUSE) 5.1 (1997)
+- First network: Linux, PS2, and OpenBSD router and firewall (33.6 kbps)
+- First jobs: Dial-up ISP, Samba File Servers
+- Novell (2006-2010): Linux Desktop (Accessibility, Google Chrome) (C, C++, C#, Java, Python)
+- Fusion-io (2010-2014): Distributed and embedded systems (C, Python)
+- Rakuten (2014-Present): Distributed systems and web backend development (Go)
+
+* Goal of this tutorial
+
+Power level you to level 10
+
+.image intro-to-go-tutorial/img/gopher.png
+
+* Overview
+
+- Tutorial document: [[http://bitly.com/1FbVLZv]]
+- 7+ tasks
+- [[https://github.com/bgmerrell/gomsg]]
+
+* History
+
+- Appeared in 2009 (with 1.0 being released March 2012)
+
+- Ken Thompson (Unix, B), Rob Pike (Plan 9, UTF8), Robert Griesemer (Java HotSpot VM)
+
+- Wanted to build a language that is efficient, safe, and easy to use
+
+- Doing research into programming language design was not the purpose
+
+* Justification -- Why another language?
+
+"Programming had become too difficult"
+
+C++, Java: Too complex, hard to use, verbose
+
+Compilation is too slow
+
+The computing landscape and scale has changed
+
+Many programmers were choosing ease (i.e., Perlythonubyscript) over safety and efficiency
+
+* Go is...
+
+Compiled (to machine code)
+
+Strongly typed
+
+Statically typed (with type inference)
+
+Capable of statically verified duck typing (via interfaces)
+
+Garbage collected
+
+Pass-by-value
+
+Similar to C in its syntax
+
+Open Source (now on GitHub!)
+
+* Go does not have...
+
+Classes
+
+Exceptions
+
+Assertions
+
+Templates / generics
+
+Operator overloading
+
+Function overloading
+
+Optional function parameters
+
+Macros
+
+Implicit type conversions
+
+Many abstractions you might be used to, e.g: a set type, an ordered map, generators, decorators, iterators, function to delete array indexes etc.
+
+* Adoption
+
+.image intro-to-go-tutorial/img/redmonk-languages-01-2015.png 561 879
+
+* Companies using Go
+
+.image intro-to-go-tutorial/img/companies-using-go-2015.jpg 561 977
+
+* Where can I use Go in the technology stack?
+
+.image intro-to-go-tutorial/img/go-spectrum.gif 561 977
+
+* Today's Language Landscape
+
+- Following graphs taken from Brad Fitzpatrick's GoCon Tokyo talk: "Go: 90% Perfect, 100% of the time."
+- Subjective
+- There's always trade-offs to consider
+
+* Fast & Fun
+
+.image intro-to-go-tutorial/img/funfast.svg
+
+* Concurrency
+
+.image intro-to-go-tutorial/img/concurrency.svg
+
+* What I dislike about Go
+- Ungoogleable name (use golang)
+- Inconsistencies for primitives, some keywords
+- Despite being small language there are still too many ways to do the same thing
+- Lack of generics can bring some awkwardness
+- Runtime is still young (GC, goroutine management)
+- Not suitable for (non-OS) embedded software
+- Still a lot of immature libraries
+- No big innovation to promote programming language research
+
+* Why I like Go
+- I almost never actually care about the things I dislike
+- Get stuff done (Go is a pragmatic language)
+- Concurrency is a breeze
+- Compile time checks (fast!), dynamic language feel
+- Replaces code that I would have written in a dynamic language
+- Fast (relatively, of course)
+- Small language
+- Easy to read (programming is communicating)
+- Great tooling
+- Cool community
+
+* Learning a new language
+
+"Go is a new language. Although it borrows ideas from existing languages, it has unusual properties that make effective Go programs different in character from programs written in its relatives. A straightforward translation of a C++ or Java program into Go is unlikely to produce a satisfactory result—Java programs are written in Java, not Go. On the other hand, thinking about the problem from a Go perspective could produce a successful but quite different program. In other words, to write Go well, it's important to understand its properties and idioms."
+
+Effective Go ([[http://golang.org/doc/effective_go.html]])
+
+* Hello World
+
+.code intro-to-go-tutorial/hello-world.go
+
+* Basic types
+
+.code intro-to-go-tutorial/basic-types.txt
+
+* Variable declarations
+
+.play intro-to-go-tutorial/variable-declarations.go
+
+* Looping, if/else, switch, const
+
+.play intro-to-go-tutorial/loop-switch-if.go
+
+* Go Workspaces
+
+*$GOPATH* Specifies the location of your workspace
+
+*$GOPATH/src* contains Go source files organized into packages
+*$GOPATH/pkg* contains package objects
+*$GOPATH/bin* contains executable commands
+
+Example Workspace:
+
+	bin/
+	    hello                 # command executable
+	pkg/
+	    linux_amd64/          # this will reflect your OS and architecture
+		github.com/user/
+		    stringutil.a  # package object
+	src/
+	    github.com/user/
+		hello/
+		    hello.go      # command source
+		stringutil/
+		    reverse.go    # package source
+
+* Task 01
+
+* Basic Go tooling
+
+*go* *run*: compile and run Go program.  E.g., "go run gomsg.go"
+
+*go* *build*: compile packages and dependencies
+
+*go* *install*: compile and install packages and dependencies (into `$GOPATH/bin` and `$GOPATH/pkg`)
+
+*go* *get*: download and install packages and dependencies. E.g., "go get github.com/BurntSushi/toml"
+
+*gofmt*: Format your code to comform to Go style guidelines.  E.g., "gofmt -w ."
+
+* More Go tooling
+
+*go* *vet*: Run a static analysis tool to check for common mistakes and suspicious code.  E.g., "go vet ./..."
+
+* Importing packages and reading documentation
+
+	import (
+		"fmt" # http://golang.org/pkg/fmt
+		"log"
+		"html"
+		"net/http" # http://golang.org/pkg/net/http
+	)
+
+.iframe http://golang.org/pkg/net/http 400 977
+
+* Task 02
+
+* Importing non-standard library packages
+
+	import (
+		"log"
+		"net/http"
+
+		"github.com/bgmerrell/gomsg/handlers/web"
+	)
+
+* Structs (defining your own types)
+
+.play intro-to-go-tutorial/structs.go
+
+* Don't fear Go pointers
+
+.play intro-to-go-tutorial/pointers.go /START OMIT/,/END OMIT/
+
+* Methods
+
+.play intro-to-go-tutorial/methods-pointers.go
+
+* Pointer Receivers vs. Value Receivers
+
+If in doubt, use a pointer receiver (it will behave like a method in other modern languages)
+
+*Specifics*
+
+- A pointer receiver should be used to persist object modifications
+
+- A pointer receiver should be used for large objects
+
+- A value receiver can be used for small objects (but the thing about persistence still applies)
+
+For more information: [[https://github.com/golang/go/wiki/CodeReviewComments#receiver-type]]
+
+* Methods on any type
+
+.play intro-to-go-tutorial/methods-on-any-type.go
+
+
+
+* Interfaces
+
+.play intro-to-go-tutorial/interfaces.go /START OMIT/,/END OMIT/
+
+* Real World Interfaces (go/src/sort/sort.go)
+
+.code intro-to-go-tutorial/interfaces-sort.go
+
+* Real World Interfaces (continued)
+
+.play intro-to-go-tutorial/interfaces-sort2.go /START OMIT/,/END OMIT/
+
+* Empty interfaces (and variadic functions)
+
+.code intro-to-go-tutorial/fmt-println.go
+
+* Errors
+
+.play intro-to-go-tutorial/errors-simple.go /START OMIT/,/END OMIT/
+
+* Custom errors and type switching
+
+.play intro-to-go-tutorial/errors.go /START OMIT/,/END OMIT/
+
+* Task 03
+
+* Unit testing (filemanager_test.go)
+
+	package filemanager
+
+	import (
+		"bytes"
+		"testing" # required
+	)
+
+	func TestAddFile(t *testing.T) {
+		name := "foo"
+		tfm := New()
+		tfm.filenameToData = map[string][]byte{}
+		err := tfm.AddFile(name, []byte{'a', 'b', 'c'})
+		if err != nil {
+			t.Fatal(err)
+		}
+		exists := tfm.FileExists(name)
+		if !exists {
+			t.Errorf("Expected filename \"%s\" to exist", name)
+		}
+		bytes := tfm.filenameToData[name]
+		expected := "abc"
+		if string(bytes) != expected {
+			t.Errorf("File contains %q, want: %q", bytes, expected)
+		}
+	}
+
+* httptest
+
+- `httptest.ResponseRecorder` implements `http.ResponseWriter` interface, `ResponseRecord` records the response for testing.
+- You can instantiate your own `http.Request` with whatever fields you want.
+
+Remember...
+
+	func (f HandlerFunc) ServeHTTP(w http.ResponseWriter, r *http.Request)
+
+* Unit testing demo
+
+* Task 04
+
+* Slices
+
+.play intro-to-go-tutorial/slices.go /START OMIT/,/END OMIT/
+
+.play intro-to-go-tutorial/range.go
+
+[[http://blog.golang.org/go-slices-usage-and-internals]]
+[[https://code.google.com/p/go-wiki/wiki/SliceTricks]]
+
+* Maps
+
+.play intro-to-go-tutorial/maps.go
+
+* Types with reference-like behavior
+
+- Map
+- Slice
+- Channel
+
+* Function values and function literals
+
+.play intro-to-go-tutorial/func-vals-and-func-literals.go
+
+* Polymorphism and Inheritance Review
+
+- Polymorphism defined: "Ability of one type to stand in for many types"[1]
+- Most statically-typed "object-oriented programming languages offer subtyping polymorphism using subclassing (also known as inheritance)."[2]
+- Most dynamically-typed languages provide polymorphism via duck typing and inheritance is used for borrowing implementation
+- Go provides polymorphism via interfaces (think statically verified duck typing)
+- Go provides implementation borrowing via embedding
+
+.caption [1] Koenig, A. (2000). Accelerated C++.
+.caption [2] [[http://en.wikipedia.org/wiki/Polymorphism_%28computer_science%29]]
+
+* Embedding
+
+.play intro-to-go-tutorial/embedding.go /START OMIT/,/END OMIT/
+
+* Real World Embedding (go/src/net/hosts.go)
+
+.code intro-to-go-tutorial/embedding2.go
+
+* Sync package
+
+.iframe http://golang.org/pkg/sync/ 561 977
+
+* Constructors
+
+.play intro-to-go-tutorial/constructors.go
+
+* Task 05
+
+* Task 06
+
+* Concurrency
+
+.play intro-to-go-tutorial/concurrency-simple.go /START OMIT/,/END OMIT/
+
+* Channels
+
+.play intro-to-go-tutorial/channels.go /START OMIT/,/END OMIT/
+
+* Buffered Channels
+
+.play intro-to-go-tutorial/buffered-channels.go
+
+* Buffered Channels (continued)
+
+.play intro-to-go-tutorial/buffered-channels2.go /START OMIT/,/END OMIT/
+
+* Select
+
+.play intro-to-go-tutorial/concurrency-for-with-select.go
+
+* Real World Concurrency
+
+.code intro-to-go-tutorial/concurrency-for-with-select2.go
+
+* Real World Concurrency (continued)
+
+.code intro-to-go-tutorial/concurrency-for-with-select3.go
+
+* Web Server
+
+.play intro-to-go-tutorial/web-server.go
+
+* Great tooling
+
+gofmt
+
+go get
+
+go build [-race] ([[https://golang.org/doc/articles/race_detector.html]])
+
+go test [-cover] ([[https://blog.golang.org/cover]])
+
+go test [-bench] ([[http://dave.cheney.net/2013/06/30/how-to-write-benchmarks-in-go]])
+
+go vet
+
+godoc
+
+cpuprofile / memprofile ([[http://blog.golang.org/profiling-go-programs]])
+
+* Common mistakes
+
+- The closure mistake
+.code intro-to-go-tutorial/closure-mistake.go
+- Not accepting interfaces (and underutilizing interfaces in general)
+- Not protecting concurrent access to shared state (e.g., maps)
+- Confusing embedding with inheritance
+- Defaulting to 3rd party libraries (web frameworks, unit testing frameworks)
+- ALL_CAPS constants
+- Receiver type
+
+* Next steps
+
+[[http://tour.golang.org]]: Go language tour with exercises
+
+[[https://golang.org/doc/install]]: Installing Go
+
+[[https://golang.org/doc/code.html]]: How to Write Go Code
+
+[[https://golang.org/doc/effective_go.html]]: Effective Go
+
+[[http://utahgophers.com]]: Utah Gopher User Group
+
+[[https://golang.org/ref/spec]]: Go Language Specification
+
+[[https://github.com/golang/go]]: Go source
+
+[[http://gophercon.com]]: Gophercon 2015 (July 7-10th)
+
+* 
+
+.image intro-to-go-tutorial/img/utah-gopher-announce-with-day.png 561 977
