@@ -4,10 +4,10 @@ import "fmt"
 
 // START OMIT
 type Coordinate struct {
-    X int
-    Y int
-    Z int
-    name string
+	X    int
+	Y    int
+	Z    int
+	name string
 }
 
 func NewCoordinate() *Coordinate {
@@ -22,7 +22,9 @@ func main() {
 	fmt.Printf("%T\n", *cp)
 	fmt.Println(&cp)
 	fmt.Printf("%T\n", &cp)
+	// fmt.Println(cp->X) // Doesn't exist
 	fmt.Println((*cp).X) // Don't use
-	fmt.Println(cp.X) // Use this instead
+	fmt.Println(cp.X)    // Use this instead
 }
+
 // END OMIT

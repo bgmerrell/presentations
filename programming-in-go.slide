@@ -1,7 +1,7 @@
 Programming in Go
 
 Brian G. Merrell
-Software Engineer, Rakuten Marketing
+Software Engineer, Walmart eCommerce
 bgmerrell (Twitter, Gmail, GitHub, Freenode, etc)
 
 * Who am I?
@@ -11,7 +11,7 @@ bgmerrell (Twitter, Gmail, GitHub, Freenode, etc)
 - First jobs: Dial-up ISP, Samba File Servers
 - Novell (2006-2010): Linux Desktop (Accessibility, Google Chrome) (C, C++, C#, Java, Python)
 - Fusion-io (2010-2014): Distributed and embedded systems (C, Python)
-- Rakuten (2014-Present): Distributed systems and web backend development (Go)
+- Web backend era (2014-Present): Web backend systems development (Go)
 
 * Goal of this talk
 
@@ -112,10 +112,21 @@ Many abstractions you might be used to, e.g: a set type, an ordered map, generat
 - Inconsistencies for primitives, some keywords
 - Despite being small language there are still too many ways to do the same thing
 - Lack of generics can bring some awkwardness
-- Runtime is still young (GC, goroutine management)
+- Array operations are often unintuitive
 - Not suitable for (non-OS) embedded software
 - Still a lot of immature libraries
 - No big innovation to promote programming language research
+- R̶u̶n̶t̶i̶m̶e̶ ̶i̶s̶ ̶s̶t̶i̶l̶l̶ ̶y̶o̶u̶n̶g̶ ̶(̶G̶C̶,̶ ̶g̶o̶r̶o̶u̶t̶i̶n̶e̶ ̶m̶a̶n̶a̶g̶e̶m̶e̶n̶t̶)̶
+
+* Garbage Collection in Go 1.5+
+
+- "Go's new garbage collector is a concurrent, tri-color, mark-sweep collector... where stop-the-world pauses are no longer a barrier to [Go]" [1]
+
+- 0-2 ms pauses depending on heap size
+
+.image programming-in-go/img/go-gc.png
+
+[1] https://blog.golang.org/go15gc
 
 * Why I like Go
 - I almost never actually care about the things I dislike
@@ -145,7 +156,7 @@ Effective Go ([[http://golang.org/doc/effective_go.html]])
 
 * Variable declarations
 
-.play programming-in-go/variable-declarations.go
+.play programming-in-go/variable-declarations.go /START OMIT/,/END OMIT/
 
 * Looping, if/else, switch, const
 
@@ -209,8 +220,8 @@ For more information: [[https://github.com/golang/go/wiki/CodeReviewComments#rec
 - Go provides polymorphism via interfaces (think statically verified duck typing)
 - Go provides implementation borrowing via embedding
 
-.caption [1] Koenig, A. (2000). Accelerated C++.
-.caption [2] [[http://en.wikipedia.org/wiki/Polymorphism_%28computer_science%29]]
+[1] Koenig, A. (2000). Accelerated C++.
+[2] [[http://en.wikipedia.org/wiki/Polymorphism_%28computer_science%29]]
 
 * Embedding
 
